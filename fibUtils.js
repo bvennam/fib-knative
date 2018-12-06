@@ -1,20 +1,16 @@
-module.exports.fibonacci = function(number) {
-  var sequence = [1, 1];
-  if (number == 1) {
-    return [1];
+let fibonacci = function(n) {
+  let sequence = [1, 1];
+  if (n === 1) {
+    return [sequence[0]];
   }
-  if (number == 2) {
+  else if (n === 2) {
     return sequence;
   }
-  while (sequence.length < number) {
-    sequence = fibonaccir(sequence);
+  else {
+    let seq = fibonacci(n-1);
+    seq.push(seq[seq.length-1] + seq[seq.length - 2])
+    return seq;
   }
-  return sequence;
 };
 
-function fibonaccir(sequence) {
-    var newseq = sequence;
-    newseq.push(sequence[sequence.length -1 ] + sequence[sequence.length-2]);
-    return newseq;
-  //}
-}
+module.exports.fibonacci = fibonacci;
