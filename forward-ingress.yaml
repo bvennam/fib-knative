@@ -10,14 +10,7 @@ metadata:
     ingress.bluemix.net/client-max-body-size: "size=200m"
 spec:
   rules:
-    - host: fib-knative.default.bmv-mycluster.us-east.containers.appdomain.cloud
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: knative-ingressgateway
-              servicePort: 80
-    - host: pypic-knative.default.bmv-mycluster.us-east.containers.appdomain.cloud
+    - host: fib-knative.default.bmv-knative.us-east.containers.appdomain.cloud
       http:
         paths:
           - path: /
