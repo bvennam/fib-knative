@@ -11,8 +11,7 @@ COPY package*.json ./
 RUN npm install --only=production
 
 # Bundle app source
-COPY server.js .
-COPY fibUtils.js
+COPY server.js fibUtils.js ./
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
