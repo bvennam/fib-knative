@@ -19,9 +19,10 @@ spec:
             name: kaniko
             arguments:
             - name: IMAGE
-              value: registry.ng.bluemix.net/beemarie/fib-knative:latest
+              value: registry.ng.bluemix.net/<NAMESPACE>/fib-knative:latest
       revisionTemplate:
         spec:
+          serviceAccountName: build-bot
           container:
-            image: registry.ng.bluemix.net/beemarie/fib-knative:latest
+            image: registry.ng.bluemix.net/<NAMESPACE>/fib-knative:latest
             imagePullPolicy: Always
