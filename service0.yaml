@@ -1,0 +1,22 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Configuration
+metadata:
+  name: fib-knative-0
+  namespace: default
+spec:
+  revisionTemplate:
+    spec:
+      container:
+        image: docker.io/ibmcom/fib-knative:vnext # The URL to the sample image
+---
+apiVersion: serving.knative.dev/v1alpha1
+kind: Route
+metadata:
+  name: fib-knative # The name of our route; appears in the URL to access the app
+  namespace: default 
+spec:
+  traffic:
+  - configurationName: fib-knative-0
+    percent: 50
+  - configurationName: fib-knative-1
+    percent: 50
