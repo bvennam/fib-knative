@@ -14,7 +14,7 @@ spec:
           source:
             git:
               url: https://github.com/beemarie/fib-knative.git
-              revision: vnext
+              revision: master
           template:
             name: kaniko
             arguments:
